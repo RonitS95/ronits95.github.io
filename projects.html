@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <h1>Projects</h1>
+    <p class="subtitle">
+        Selected projects in machine learning, molecular modeling, and computational
+        chemistry.
+    </p>
+    <p class="archive-link">
+        For a broader overview of research projects, 
+        <a href="additional-projects.html">click here</a>
+    </p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    
+    <a class="cv_button" href="assets/Resume_Ronit_Sarangi.pdf" target="_blank">
+                View CV (PDF)
+    </a>
+</nav>
+
+<main>
+
+<section class="project">
+
+    <h2>Machine Learning Model for Predicting Vertical Energy Gaps</h2>
+
+    <div class="project-content">
+
+        <div class="project-text">
+        <p>
+            Calculation of free energy in redox processes using linear response
+            approximation requires sampling the vertical energy gaps (VEGs) in different
+            potential energy surfaces. I developed machine learning models to predict VEGs
+            in biomolecular systems using features derived from computationally efficient semi-empirical 
+            calculations. The work focused on reducing the computational cost associated
+            with explicit quantum mechanical (QM) calculations while preserving predictive 
+            accuracy across diverse biochemical environments.
+        </p>
+
+        <p>
+            A hybrid training strategy combining aqueous-phase data with limited number of 
+            protein environment samples enhances the model transferability to biologically
+            relevant systems. The workflow integrated physics-inpired features, statistical 
+            learning methods, and a unique hybrid training approach to enable scalable 
+            estimation of redox properties in large molecular systems. 
+        </p>
+
+        <p class="tools">
+            <strong>Tools:</strong> Q-Chem, Scikit-learn, Pytorch, QM/MM simulations (NAMD/ORCA),
+            feature engineering
+        </p>
+
+        <p class="paper-link">
+            Related publications:
+            <a href="https://doi.org/10.1021/acs.jctc.4c00715" targer="_blank">
+                JCTC (2024)
+            </a>,
+            <a href="https://doi.org/10.1021/acs.jpcb.5c01121" target="_blank">
+                JPCB (2025)
+            </a>
+        </p>
+
+        </div>
+
+        <div class="project-image">
+            <img src="assets/ml_veg.png" alt="Graphical abstract of the ML model">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="project">
+
+    <h2>Excited State Force Field Parameterization via ffTK-ORCA Interface</h2>
+
+    <div class="project-content">
+
+        <div class="project-text">
+        <p>
+            Force field based classical molecular dynamics (MD) allow sampling over timescales
+            spanning microseconds, but are limited to ground state of the molecule. Sampling 
+            dynamics in the excited state is limited to expensive QM/MM calculations. I developed 
+            workflows for generating excited state force field parameters (similar to CHARMM protocol)
+            through integration of ORCA quantum chemistry package with the force-field toolkit (ffTK).
+            The project focused the design, implementation, and benchmarking of this interface. 
+
+        </p>
+
+        <p>
+             We estimated bonded and electrostatic parameters for several systems, including the Green
+             Fluoroscent Protein (GFP) chromophore in their ground and first electronic excited states.
+             We then ran MD simulations using these parameters and computed properties, such as excitation
+             energies, dipole moments, structural rearrangements for bencharking purposes. 
+        </p>
+
+        <p class="tools">
+            <strong>Tools:</strong> VMD, ORCA, tcl scripting, TD-DFT calculation
+        </p>
+        </div>
+
+        <div class="project-image">
+            <img src="assets/fftk-orca.png" alt="Graphical abstract of the ML model">
+        </div>
+    </div>
+
+</section>
+
+<section class="project">
+
+    <h2>Computational modeling of one and two-photon spectra of aqueous thiocyanate ion</h2>
+
+    <div class="project-content">
+
+        <div class="project-text">
+        <p>
+            Linear and non-linear spectroscopies provide complementary information about molecular systems 
+            and require different computational approaches to model. In this project I investigated UV-Vis 
+            (linear) and two-photon absorption (non-linear) spectra of the thiocyanate anion in water. 
+            The work explored how solvent arrangement and resulting solute-solvent interactions influence 
+            spectroscopic properties and excited state behavior.
+
+        </p>
+
+        <p>
+            The project combined QM/MM dynamics simulation followed by equation-of-motion coupled-cluster 
+            (EOM-CC) methods to calculate the linear and non-linear spectra. We also investigated
+            the different nature of excited states shown by anions in aqueous environment, often referred to 
+            as charge transfer to solvent (CTTS) states.
+        </p>
+
+        <p class="tools">
+            <strong>Tools:</strong> Q-Chem, Gabedit (visualization tool), Coupled-cluster calculations
+        </p>
+
+        <p class="paper-link">
+            Related publications:
+            <a href="https://doi.org/10.1002/jcc.27282" targer="_blank">
+                JCC (2023)
+            </a>,
+            <a href="https://doi.org/10.1080/00268976.2022.2148582" target="_blank">
+                Mol Phys (2022)
+            </a>
+        </p>
+
+        </div>
+
+        <div class="project-image">
+            <img src="assets/scn-1h.png" alt="Graphical abstract of the ML model">
+        </div>
+
+    </div>
+        
+</section>
+
+</main>
+</body>
+</html>
+

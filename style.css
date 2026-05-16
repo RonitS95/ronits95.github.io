@@ -1,0 +1,265 @@
+body {
+    /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.65;
+
+    margin: 30px auto;
+    max-width: 1140px;
+    padding: 0 24px;
+
+    color: #222;
+    background-color: #ffffff;
+
+    /* comment this out when finished */
+    /*outline: 1px solid red;*/
+}
+
+/* ---------- Typography ---------- */
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.05rem;
+    margin-top: 0;
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+    margin: 50px 0 70px 0;
+}
+
+nav a {
+    margin-right: 24px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.cv-button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+.cv-button:hover {
+    border-color: #aaa;
+    color: #000;
+}
+
+/* ---------- Homepage About Section ---------- */
+
+.about-section {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.profile-image {
+    flex: 1;
+}
+
+.profile-image img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ececec
+}
+
+/* ---------- Project Sections ---------- */
+
+.project {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.project-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.project-text {
+    flex: 2;
+}
+
+.project-image {
+    flex: 1;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+.project h2 {
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.paper-link {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.paper-link a {
+    color: #444;
+    text-decoration: none;
+}
+
+.paper-link a:hover {
+    text-decoration: underline;
+}
+
+.tools {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ---------- Additional Project ---------- */
+.archive-link {
+    margin-top: 12px;
+    color: #666;
+    font-size: 0.97rem;
+}
+
+.archive-link a {
+    color: #444;
+    text-decoration: none;
+}
+
+.archive-link a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.back-link a {
+    color: #444;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+    margin-top: 50px;
+}
+
+.archive-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: translateY(-3px);
+    border-radius: 10px;
+    border: 1px solid #ececec;
+}
+
+.archive-card:hover {
+    transform: translateY(-3px);
+}
+
+.archive-card h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.archive-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 100px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #f0f0f0;
+}
+
+footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: #222;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #444;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+    body {
+        margin: 40px auto;
+    }
+    .project-content {
+        flex-direction: column;
+    }
+    .about-section {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .profile-image img {
+        width: 180px;
+        height: 180px;
+    }
+}

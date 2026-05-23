@@ -9,18 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 </head>
 
 <body>
 <header>
-    <h1>Projects</h1>
+    <h1 class="section-title">Projects</h1>
     <p class="subtitle">
         Selected projects in machine learning, molecular modeling, and computational
         chemistry.
-    </p>
-    <p class="archive-link">
-        For a broader overview of research projects, 
-        <a href="additional-projects.html">click here</a>
     </p>
 </header>
 
@@ -28,7 +26,7 @@
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     
-    <a class="cv_button" href="assets/Resume_Ronit_Sarangi.pdf" target="_blank">
+    <a class="cv-button" href="assets/Resume_Ronit_Sarangi.pdf" target="_blank">
                 View CV (PDF)
     </a>
 </nav>
@@ -45,16 +43,14 @@
         <p>
             Calculation of free energy in redox processes using linear response
             approximation requires sampling the vertical energy gaps (VEGs) in different
-            potential energy surfaces. I developed machine learning models to predict VEGs
-            in biomolecular systems using features derived from computationally efficient semi-empirical 
-            calculations. The work focused on reducing the computational cost associated
-            with explicit quantum mechanical (QM) calculations while preserving predictive 
-            accuracy across diverse biochemical environments.
+            potential energy surfaces. I <u>developed machine learning models to predict VEGs
+            in biomolecular systems</u> using features derived from computationally efficient semi-empirical 
+            calculations. 
         </p>
 
         <p>
-            A hybrid training strategy combining aqueous-phase data with limited number of 
-            protein environment samples enhances the model transferability to biologically
+            A <u>hybrid training strategy combining aqueous-phase data with limited number of 
+            protein environment samples</u> enhances the model transferability to biologically
             relevant systems. The workflow integrated physics-inpired features, statistical 
             learning methods, and a unique hybrid training approach to enable scalable 
             estimation of redox properties in large molecular systems. 
@@ -95,11 +91,9 @@
         <p>
             Force field based classical molecular dynamics (MD) allow sampling over timescales
             spanning microseconds, but are limited to ground state of the molecule. Sampling 
-            dynamics in the excited state is limited to expensive QM/MM calculations. I developed 
-            workflows for generating excited state force field parameters (similar to CHARMM protocol)
-            through integration of ORCA quantum chemistry package with the force-field toolkit (ffTK).
-            The project focused the design, implementation, and benchmarking of this interface. 
-
+            dynamics in the excited state is limited to expensive QM/MM calculations. I <u>developed 
+            workflows to obtain excited state force field parameters 
+            through integration of ORCA quantum chemistry package with the force-field toolkit</u>. 
         </p>
 
         <p>
@@ -123,6 +117,39 @@
 
 <section class="project">
 
+    <h2>Accelerating tensor contractions in electronic structure calculations using STRUMPACK.</h2>
+
+    <div class="project-content">
+
+        <div class="project-text">
+        <p>
+            STRUctured Matrix PACkage (STRUMPACK) provides linear algebra routines for sparse and dense 
+            rank-structured matrices. I explored <u>algorithms to integrate matrix compression and 
+            accelerating tensor contractions</u> typically present in coupled-cluster calculations done in 
+            Q-Chem.  
+        </p>
+
+        <p>
+            The project involved sfotware development and combining two different software packages into one.
+            The project was highly collborative and involved three research groups and Q-Chem Inc. 
+        </p>
+
+        <p class="tools">
+            <strong>Tools:</strong> Q-Chem, C++, software development
+        </p>
+
+        </div>
+
+        <div class="project-image">
+            <img src="assets/strum.png" alt="Graphical abstract of the ML model">
+        </div>
+
+    </div>
+        
+</section>
+
+<section class="project">
+
     <h2>Computational modeling of one and two-photon spectra of aqueous thiocyanate ion</h2>
 
     <div class="project-content">
@@ -130,16 +157,16 @@
         <div class="project-text">
         <p>
             Linear and non-linear spectroscopies provide complementary information about molecular systems 
-            and require different computational approaches to model. In this project I investigated UV-Vis 
-            (linear) and two-photon absorption (non-linear) spectra of the thiocyanate anion in water. 
+            and require different computational approaches to model. In this project I <u>investigated UV-Vis 
+            and two-photon absorption spectra of the thiocyanate anion in water</u>. 
             The work explored how solvent arrangement and resulting solute-solvent interactions influence 
             spectroscopic properties and excited state behavior.
 
         </p>
 
         <p>
-            The project combined QM/MM dynamics simulation followed by equation-of-motion coupled-cluster 
-            (EOM-CC) methods to calculate the linear and non-linear spectra. We also investigated
+            The project <u>combined QM/MM dynamics simulation and equation-of-motion coupled-cluster 
+            (EOM-CC) methods</u> to calculate the linear and non-linear spectra. We also investigated
             the different nature of excited states shown by anions in aqueous environment, often referred to 
             as charge transfer to solvent (CTTS) states.
         </p>
@@ -166,6 +193,78 @@
 
     </div>
         
+</section>
+
+<section class="additional-projects">
+
+    <h1 class="section-title">Additional Projects</h1>
+
+    <div class="archive-grid">
+        <div class="archive-card">
+
+            <img src="assets/basis.jpg" alt="Project image">
+
+            <h3> Core-Level Spectroscopy</h3>
+
+            <p>
+                Basis sets strategies for computational core-ionization 
+                spectroscopy. 
+            </p>
+
+        </div>
+
+        <div class="archive-card">
+
+            <img src="assets/coup.png" alt="Project image">
+
+            <h3> Machine Learning Electronic Coupling</h3>
+
+            <p>
+                Machine learning electronic coupling
+                between homodimers and heterodimers.
+            </p>
+
+        </div>
+
+        <div class="archive-card">
+
+            <img src="assets/mtrc.jpg" alt="Project image">
+
+            <h3> Membrane-bound MtrCAB Simulations</h3>
+
+            <p>
+                Modeling electron transport protein MtrCAB system of 
+                <i>Shewanella oneidensis</i>.
+            </p>
+
+        </div>
+
+        <div class="archive-card">
+
+            <img src="assets/ggpp.png" alt="Project image">
+
+            <h3> GGS Protein Modeling and Simulation</h3>
+
+            <p>
+                Modeling geranylgeranyl pyrophosphate synthase (GGS) protein and expression 
+                in <i>E-coli</i>.
+            </p>
+
+        </div>
+
+        <div class="archive-card">
+
+            <img src="assets/mm-dft.jpg" alt="Project image">
+
+            <h3> Frozen-Density Embedding</h3>
+
+            <p>
+                FDE Theory applied to charge transfer 
+                to solvent excitations in aqueous thiocynate system.
+            </p>
+
+        </div>
+    </div>
 </section>
 
 </main>

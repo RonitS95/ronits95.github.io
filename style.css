@@ -1,3 +1,39 @@
+:root {
+    --bg-color: #f8f9fb;
+    --text-color: #2f2f2f;
+    --card-color: #ffffff;
+    --border-color: #ececec;
+
+    --gradient-start: #fbf7f7;
+    --gradient-end: #f5f7fa;
+
+    --muted-text: #565b61;
+    --link-color: #4a6785;
+
+    --toggle-bg: rgba(255,255,255,0.75);
+    --toggle-border: #dddddd;
+
+    --hover-color: #2f2f2f;
+    --paper-link-color: #444444;
+}
+
+body.dark-mode {
+    --bg-color: #111418;
+    --text-color: #e7e7e7;
+    --card-color: #1b2128;
+    --border-color: #2b3138;
+
+    --gradient-start: #15191f;
+    --gradient-end: #111418;
+    --link-color: #8fb3d9;
+
+    --toggle-bg: rgba(30,35,42,0.85);
+    --toggle-border: #2f3740;
+
+    --hover-color: #ffffff;
+    --paper-link-color: #b8c7d9;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; 
     /*font-family: 'Inter', sans-serif;*/
@@ -8,16 +44,51 @@ body {
     max-width: 1140px;
     padding: 0 24px;
 
-    color: #2f2f2f;
-    background-color: #f8f9fb;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     background:
     radial-gradient(
     circle at top right,
-    #fbf7f7,
-    #f5f7fa
+    var(--gradient-start),
+    var(--gradient-end)
 );
     /* comment this out when finished */
     /*outline: 1px solid red; */
+}
+
+#theme-toggle {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 24px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid var(--toggle-border);
+    border-radius: 10px;
+
+    background-color: var(--toggle-bg);
+    color: var(--muted-text);
+
+    cursor: pointer;
+    font-size: 1.4rem;
+    backdrop-filter: blur(8px);
+
+    transition:
+        background-color  0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+
+    z-index: 1000;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+    border-color: #aaaaaa; 
 }
 
 /* ---------- Typography ---------- */
@@ -55,12 +126,12 @@ h2 {
     width: 100%;
     height: 2px;
     margin-top: 8px;
-    background-color: #222;
+    background-color: var(--text-color);
     border-radius: 2px;
 }
 
 .subtitle {
-    color: #666;
+    color: var(--muted-text);
     font-size: 1.05rem;
     margin-top: 0;
 }
@@ -74,13 +145,13 @@ nav {
 nav a {
     margin-right: 24px;
     text-decoration: none;
-    color: #4a6785;
+    color: var(--link-color);
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #2f2f2f;
+    color: var(--text-color);
     text-decoration: underline;
 }
 
@@ -90,7 +161,7 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 6px;
     text-decoration: none;
-    color: #222;
+    color: var(--text-color);
     font-weight: 500;
 
     transition: all 0.2s ease;
@@ -98,7 +169,7 @@ nav a:hover {
 
 .cv-button:hover {
     border-color: #aaa;
-    color: #000;
+    color: var(--text-color);
 }
 
 /* ---------- Homepage About Section ---------- */
@@ -153,7 +224,7 @@ nav a:hover {
 }
 
 .social-icons a:hover {
-    color: #2f2f2f;
+    color: var(--hover-color);
     transform: translateY(-2px);
 }
 
@@ -165,7 +236,7 @@ nav a:hover {
     margin-top: 60px;
     margin-bottom: 100px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project-content {
@@ -186,7 +257,7 @@ nav a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border-color);
 }
 
 .project h2 {
@@ -197,15 +268,16 @@ nav a:hover {
 .paper-link {
     margin-top: 8px;
     font-size: 0.95rem;
-    color: #666;
+    color: var(--muted-text);
 }
 
 .paper-link a {
-    color: #444;
+    color: var(--paper-link-color);
     text-decoration: none;
 }
 
 .paper-link a:hover {
+    color: var(--hover-color);
     text-decoration: underline;
 }
 
@@ -214,11 +286,11 @@ nav a:hover {
     margin-top: 20px;
     padding: 8px 14px;
 
-    border: 1px solid #e3e6e8;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
 
-    color: #444;
-    background-color: #f1f3f5;
+    color: var(--text-color);
+    background-color: var(--card-color);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -233,10 +305,10 @@ nav a:hover {
 }
 
 .archive-card {
-    background: #ffffff;
+    background: var(--card-color);
     padding: 14px;
     border-radius: 14px;
-    border: 1px solid #ececec;
+    border: 1px solid var(--border-color);
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: transform 0.2s ease,
                 box-shadow 0.2s ease;
@@ -248,7 +320,7 @@ nav a:hover {
     object-fit: cover;
     transition: translateY(-3px);
     border-radius: 10px;
-    border: 1px solid #ececec;
+    border: 1px solid var(--border-color);
 }
 
 .archive-card:hover {
@@ -265,7 +337,7 @@ nav a:hover {
 
 .archive-card p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--muted-text);
     line-height: 1.5;
 }
 
@@ -275,14 +347,14 @@ footer {
     margin-top: 100px;
     padding-top: 20px;
     font-size: 0.9rem;
-    color: #666;
-    border-top: 1px solid #f0f0f0;
+    color: var(--muted-text);
+    border-top: 1px solid var(--border-color);
 }
 
 footer h3 {
     font-size: 1.1rem;
     margin-bottom: 16px;
-    color: #222;
+    color: var(--text-color);
 }
 
 footer p {
@@ -290,7 +362,7 @@ footer p {
 }
 
 footer a {
-    color: #444;
+    color: var(--text-color);
     text-decoration: none;
 }
 

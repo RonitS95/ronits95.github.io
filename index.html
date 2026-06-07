@@ -7,12 +7,19 @@
 
         <meta charset="UTF-8">
         <title>Ronit Sarangi | Computational Scientist</title>
+        <meta name="description" content="Computational scientist specializing in biomolecular simulations, machine learning 
+        for molecular systems, and computational chemistry.">
+
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
     </head>
 
     <body>
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        
         <header>
             <h1>Ronit Sarangi</h1>
             <p class="subtitle">Computational Scientist</p>
@@ -55,15 +62,15 @@
 
                     <div class="social-icons">
 
-                    <a href="https://github.com/RonitS95" target="_blank">
+                    <a href="https://github.com/RonitS95" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                     </a>
 
-                    <a href="https://linkedin.com/in/ronit-sarangi-21043a260" target="_blank">
+                    <a href="https://linkedin.com/in/ronit-sarangi-21043a260" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                     </a>
 
-                    <a href="https://scholar.google.com/citations?user=qcAlk1kAAAAJ&hl=en&oi=ao" target="_blank">
+                    <a href="https://scholar.google.com/citations?user=qcAlk1kAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
                     <i class="fas fa-graduation-cap"></i>
                     </a>
                 </div>
@@ -89,6 +96,42 @@
         </p>
 
     </footer>
+
+    <script>
+        const toggleButton =
+        document.getElementById("theme-toggle");
+
+        /* Load saved theme */ 
+        if (localStorage.getItem("theme") == "dark") {
+            document.body.classList.add("dark-mode");
+
+            const icon = toggleButton.querySelector("i");
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        }
+        
+        /* Toggle theme */ 
+        toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        const icon = toggleButton.querySelector("i");
+
+        if (
+            document.body.classList.contains("dark-mode")
+        ) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+            localStorage.setItem("theme", "dark");
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+            localStorage.setItem("theme", "light");
+        }
+
+    });
+    </script>
 
     </body>
 </html>

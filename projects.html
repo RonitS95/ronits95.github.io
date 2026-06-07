@@ -14,6 +14,10 @@
 </head>
 
 <body>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+    </button>
+    
 <header>
     <h1 class="section-title">Projects</h1>
     <p class="subtitle">
@@ -228,7 +232,7 @@
 
         <div class="archive-card">
 
-            <img src="assets/mtrc.jpg" alt="Project image">
+            <img src="assets/mtrc.png" alt="Project image">
 
             <h3> Membrane-bound MtrCAB Simulations</h3>
 
@@ -254,7 +258,7 @@
 
         <div class="archive-card">
 
-            <img src="assets/mm-dft.jpg" alt="Project image">
+            <img src="assets/mm-dft.png" alt="Project image">
 
             <h3> Frozen-Density Embedding</h3>
 
@@ -268,6 +272,41 @@
 </section>
 
 </main>
+    <script>
+        const toggleButton =
+        document.getElementById("theme-toggle");
+
+        /* Load saved theme */ 
+        if (localStorage.getItem("theme") == "dark") {
+            document.body.classList.add("dark-mode");
+
+            const icon = toggleButton.querySelector("i");
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        }
+        
+        /* Toggle theme */ 
+        toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        const icon = toggleButton.querySelector("i");
+
+        if (
+            document.body.classList.contains("dark-mode")
+        ) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+            localStorage.setItem("theme", "dark");
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+            localStorage.setItem("theme", "light");
+        }
+
+    });
+    </script>
 </body>
 </html>
 
